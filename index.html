@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Termo</title>
+</head>
+<body>
+    
+    <h1>Termo</h1>
+    <div id="display">
+        <div id="container"></div>
+    </div>
+    
+    <main>
+        <div>
+            <p id="attemptsDisplay">Tentativas: 0</p>
+        </div>
+        Insira uma palavra: <input type="text" id="trial" maxlength="5" minlength="5">
+        <button id="send">Enviar</button>
+    </main>
+
+    <div class="congratulations">
+        <div class="congratulations-center">
+            <img src="trofeu_50.png" class="trophy">
+        </div>
+        <div class="congratulations-bottom">
+            <h2>Parabéns, você acertou a palavra!!!</h2>
+        </div>
+    </div>
+
+    <div class="gameover">
+        <div class="gameover-center">
+            <img src="sadEmoji_50.png" class="emoji">
+        </div>
+        <div class="gameover-bottom"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

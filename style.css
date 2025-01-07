@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 4rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+div#display {
+    display: flex;
+}
+
+div#container {
+    display: grid;
+    margin: auto; 
+    grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+div#container div {
+    margin: auto;
+    height: 0.5rem;
+    width: 0.5rem;
+    padding: 2rem;
+    background-color: #ccc;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+main {
+    margin-top: 1.5rem;
+}
+
+
+.congratulations {
+    display: block;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    background-color: #7e2be9;
+    width: 70vh;
+    height: 60vh;
+
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.congratulations.show {
+    opacity: 1;
+}
+
+.congratulations-center {
+    position: absolute;
+    top: 0;
+}
+
+.congratulations-center .trophy {
+    position: relative;
+    left: 5rem;
+}
+
+.congratulations-bottom {
+    position: absolute;
+    bottom: 3rem;
+    left: 5vh;
+}
+
+
+.gameover {
+    display: block;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    background-color: #ED2939;
+    width: 70vh;
+    height: 60vh;
+
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    transition-duration: 1s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gameover.show {
+    opacity: 1;
+}
+
+.gameover-center {
+    position: absolute;
+    top: 0;
+}
+
+.gameover-center .emoji {
+    position: relative;
+    left: 5rem;
+}
+
+.gameover-bottom {
+    position: absolute;
+    bottom: 3rem;
+}
