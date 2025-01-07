@@ -39,7 +39,6 @@ let victory = 0;
 
 function compare() {
 
-    let control = 0;
     let trial = document.getElementById('trial').value;
     let attemptsDisplay = document.getElementById('attemptsDisplay');
 
