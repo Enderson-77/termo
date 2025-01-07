@@ -1,2 +1,1 @@
-# termo
-Jogo - Termo
+# Termo/Wordle
