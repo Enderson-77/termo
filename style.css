@@ -6,12 +6,14 @@ body {
     justify-content: center;
 }
 
-input {
-    width: 4rem;
+main {
+    position: relative;
+    top: -2rem;
 }
 
-button {
-    cursor: pointer;
+h1 {
+    position: relative;
+    padding-top: 1rem;
 }
 
 div#display {
@@ -28,8 +30,8 @@ div#container {
 
 div#container div {
     margin: auto;
-    height: 0.5rem;
-    width: 0.5rem;
+    height: 0.1rem;
+    width: 0.1rem;
     padding: 2rem;
     background-color: #ccc;
     font-size: 20px;
@@ -37,8 +39,68 @@ div#container div {
 }
 
 
-main {
-    margin-top: 1.5rem;
+/*div#display-keyboard {
+    display: flex;
+}*/
+
+/*div#keyboard {
+    display: grid;
+    margin: auto; 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}*/
+
+div#keyboard {
+    display: grid;
+    margin: auto;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+div#keyboard-section1 {
+    display: grid;
+    margin: auto; 
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}
+
+div#keyboard-section1 div {
+    height: 0.5rem;
+    width: 0.005rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #ccc;
+}
+
+div#keyboard-section2 {
+    display: grid;
+    margin: auto; 
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+}
+
+div#keyboard-section2 div {
+    height: 0.5rem;
+    width: 0.005rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #ccc;
+}
+
+div#keyboard-section3 {
+    display: grid;
+    margin: auto; 
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+div#keyboard-section3 div {
+    height: 0.5rem;
+    width: 0.005rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #ccc;
 }
 
 

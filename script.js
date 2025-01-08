@@ -3,8 +3,12 @@
 */
 
 const word = "mosca";
+let keyboardArray = [];
 
-window.onload = generateSquares;
+window.onload = function() {
+    generateSquares();
+    generateKeyboard();
+};
 
 let controller = 0;  // It's used to control how many time any key is pressed
 let trial;
@@ -49,6 +53,73 @@ function generateSquares() {
             div.className = `square row-${row} col-${col}`;
 
             container.appendChild(div);
+
+        }
+
+    }
+
+}
+
+
+function generateKeyboard() {
+
+    for (let row = 0; row < 3; row++) {
+
+        switch (row) {
+            case 0:
+
+                keyboardArray = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
+
+                let keyboard1 = document.getElementById('keyboard-section1');
+
+                for (let col = 0; col < 10; col++) {
+
+                    let div = document.createElement('div');
+                    div.className = `box row-${row} col-${col}`;
+                    
+                    keyboard1.appendChild(div);
+        
+                    document.querySelector(`.box.row-${row}.col-${col}`).innerHTML = keyboardArray[col];
+
+                }
+
+                break;
+            
+            case 1:
+
+                keyboardArray = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
+
+                let keyboard2 = document.getElementById('keyboard-section2');
+
+                for (let col = 0; col < 9; col++) {
+
+                    let div = document.createElement('div');
+                    div.className = `box row-${row} col-${col}`;
+                    
+                    keyboard2.appendChild(div);
+        
+                    document.querySelector(`.box.row-${row}.col-${col}`).innerHTML = keyboardArray[col];
+
+                }
+
+                break;
+
+            default:
+
+                keyboardArray = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
+                let keyboard3 = document.getElementById('keyboard-section3');
+
+                for (let col = 0; col < 7; col++) {
+
+                    let div = document.createElement('div');
+                    div.className = `box row-${row} col-${col}`;
+                    
+                    keyboard3.appendChild(div);
+        
+                    document.querySelector(`.box.row-${row}.col-${col}`).innerHTML = keyboardArray[col];
+
+                }
 
         }
 
