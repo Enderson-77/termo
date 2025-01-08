@@ -22,9 +22,17 @@ document.addEventListener('keypress', function(event) {
             trial += event.key;
             controller++;
         }
-        console.log(trial);
-        console.log(controller);
         changeSquares(); 
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Backspace') {
+        if (controller > 0) {
+            trial = trial.slice(0, -1);
+            controller--;
+            document.querySelector(`.square.row-${nextRow}.col-${controller}`).innerHTML = '';
+        }
     }
 });
 
