@@ -97,7 +97,7 @@ div#keyboard-section3 div {
     justify-content: center;
     text-align: center;
     background-color: #7e2be9;
-    width: 70vh;
+    width: 80vh;
     height: 60vh;
 
     opacity: 0;
@@ -118,13 +118,26 @@ div#keyboard-section3 div {
 
 .congratulations-center .trophy {
     position: relative;
-    left: 5rem;
+    left: 7rem;
 }
 
 .congratulations-bottom {
     position: absolute;
     bottom: 3rem;
-    left: 5vh;
+}
+
+.congratulations-bottom button {
+    position: relative;
+    border-radius: 8px;
+    border: 0;
+    background-color: #81d416;
+    padding: 0.8rem;
+    top: .8rem;
+}
+
+.congratulations-bottom h2 {
+    position: relative;
+    top: 1rem;
 }
 
 
@@ -134,7 +147,7 @@ div#keyboard-section3 div {
     justify-content: center;
     text-align: center;
     background-color: #ED2939;
-    width: 70vh;
+    width: 80vh;
     height: 60vh;
 
     opacity: 0;
@@ -156,10 +169,24 @@ div#keyboard-section3 div {
 
 .gameover-center .emoji {
     position: relative;
-    left: 5rem;
+    left: 7rem;
 }
 
 .gameover-bottom {
     position: absolute;
     bottom: 3rem;
+}
+
+.gameover-bottom button {
+    position: relative;
+    border-radius: 8px;
+    border: 0;
+    background-color: #12D6C6;
+    padding: 0.8rem;
+    top: .8rem;
+}
+
+.gameover-bottom h2 {
+    position: relative;
+    top: 1rem;
 }

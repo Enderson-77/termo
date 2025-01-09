@@ -139,6 +139,7 @@ function changeSquares() {
 
 let attempts = 1;
 let victory = 0;
+let rightLetters = [];
 
 function compare() {
 
@@ -165,6 +166,8 @@ function compare() {
                 for (let count = 0; count < keyboardArray.length; count++) {
 
                     if (trial[i] == keyboardArray[count]) {
+
+                        rightLetters.push(trial[i]);
 
                         if (count < 10) {
 
@@ -204,11 +207,11 @@ function compare() {
                         document.querySelector(`.square.row-${nextRow}.col-${i}`).style.backgroundColor = "orange";
 
                         /*
-                        *   Change the keyboard when some char is correct
+                        *   Change the keyboard when some char is correct but not in the same index
                         */
                         for (let count = 0; count < keyboardArray.length; count++) {
 
-                            if (trial[i] == keyboardArray[count]) {
+                            if (trial[i] == keyboardArray[count] && keyboardArray[count] != rightLetters[count]) {
         
                                 if (count < 10) {
         
@@ -237,9 +240,12 @@ function compare() {
             
                     } else {
 
+                        /*
+                        *   Change the keyboard when the char doesn't exist
+                        */
                         for (let count = 0; count < keyboardArray.length; count++) {
 
-                            if (trial[i] == keyboardArray[count]) {
+                            if (trial[i] == keyboardArray[count] && keyboardArray[count] != rightLetters[count]) {
                 
                                 if (count < 10) {
                 
@@ -279,6 +285,14 @@ function compare() {
 
         if (trial == word) {
 
+            let h2 = document.createElement('h2');
+            h2.textContent = `Parabéns, você acertou a palavra em ${attempts-1} tentativas!!!`;
+            document.querySelector('.congratulations-bottom').appendChild(h2);
+
+            let button = document.createElement('button');
+            button.textContent = 'Jogar Novamente'
+            document.querySelector('.congratulations-bottom').appendChild(button);
+
             document.querySelector('.congratulations').classList.add('show');
 
             attempts = 6;
@@ -289,10 +303,17 @@ function compare() {
             let h2 = document.createElement('h2');
             h2.textContent = `Infelizmente você perdeu!!! A palavra oculta era: ${word}`;
             document.querySelector(`.gameover-bottom`).appendChild(h2);
+
+            let button = document.createElement('button');
+            button.textContent = 'Jogar Novamente'
+            document.querySelector('.gameover-bottom').appendChild(button);
+
             document.querySelector(`.gameover`).classList.add('show');
 
         }
 
     } 
+
+    console.log(rightLetters)
 
 }
