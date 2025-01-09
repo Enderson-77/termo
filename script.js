@@ -1,7 +1,3 @@
-/* 28/11/2024 
-*  It's working, however it needs visual updates 
-*/
-
 const word = "mosca";
 let keyboardArray = [];
 
@@ -136,6 +132,7 @@ function changeSquares() {
         document.querySelector(`.square.row-${nextRow}.col-${i}`).innerHTML = trial[i];
 
     }
+    
 
 }
 
@@ -145,7 +142,9 @@ let victory = 0;
 
 function compare() {
 
-    let attemptsDisplay = document.getElementById('attemptsDisplay');
+    keyboardArray = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
+    let row = 0;
 
     if (attempts <= 6 && victory == 0) {
 
@@ -159,7 +158,39 @@ function compare() {
             if (trial[i] == word[i]) {
     
                 document.querySelector(`.square.row-${nextRow}.col-${i}`).style.backgroundColor = "green";
-            
+
+                /*
+                *   Change the keyboard when some char is correct
+                */
+                for (let count = 0; count < keyboardArray.length; count++) {
+
+                    if (trial[i] == keyboardArray[count]) {
+
+                        if (count < 10) {
+
+                            row = 0;
+                            document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "green";
+
+                        } else if (count < 19) {
+
+                            row = 1;
+                            count -= 10;
+                            document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "green";
+                            count += 10;
+
+                        } else {
+
+                            row = 2;
+                            count -= 19;
+                            document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "green";
+                            count += 19;
+
+                        }
+
+                    }
+
+                }
+
             } else {
             
                 /* 
@@ -171,16 +202,77 @@ function compare() {
                     if (trial[i] == word[j]) {
     
                         document.querySelector(`.square.row-${nextRow}.col-${i}`).style.backgroundColor = "orange";
+
+                        /*
+                        *   Change the keyboard when some char is correct
+                        */
+                        for (let count = 0; count < keyboardArray.length; count++) {
+
+                            if (trial[i] == keyboardArray[count]) {
+        
+                                if (count < 10) {
+        
+                                    row = 0;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "orange";
+        
+                                } else if (count < 19) {
+        
+                                    row = 1;
+                                    count -= 10;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "orange";
+                                    count += 10;
+        
+                                } else {
+        
+                                    row = 2;
+                                    count -= 19;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "orange";
+                                    count += 19;
+        
+                                }
+        
+                            }
+        
+                        }
             
+                    } else {
+
+                        for (let count = 0; count < keyboardArray.length; count++) {
+
+                            if (trial[i] == keyboardArray[count]) {
+                
+                                if (count < 10) {
+                
+                                    row = 0;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "#999";
+                
+                                } else if (count < 19) {
+                
+                                    row = 1;
+                                    count -= 10;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "#999";
+                                    count += 10;
+                
+                                } else {
+                
+                                    row = 2;
+                                    count -= 19;
+                                    document.querySelector(`.box.row-${row}.col-${count}`).style.backgroundColor = "#999";
+                                    count += 19;
+                
+                                }
+                
+                            }
+                
+                        }
+
                     }
             
                 }
             
-            }
-            
-        }
+            }    
 
-        attemptsDisplay.textContent = `Tentativas: ${attempts}`;
+        }
 
         nextRow++;
         attempts++;
